@@ -8,7 +8,9 @@ class CKFinderMiddleware
 {
     public function handle($request, Closure $next)
     {
-        config(['ckfinder.authentication' => auth()->check()] );
+        config(['ckfinder.authentication' => function(){
+            return  auth()->check();
+        }] );
 
         return $next($request);
     }

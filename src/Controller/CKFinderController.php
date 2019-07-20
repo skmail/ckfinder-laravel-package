@@ -23,6 +23,7 @@ class CKFinderController extends Controller
      */
     public function requestAction(ContainerInterface $container, Request $request)
     {
+
         /** @var CKFinder $connector */
         $connector = $container->get('ckfinder.connector');
 
